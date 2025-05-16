@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Top Up Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Toko Top Up Game</h1>
+  </header>
+
+  <main>
+    <h2>Pilih Game</h2>
+    <div class="game-list">
+      <a href="ml.html">Mobile Legends</a>
+      <a href="ff.html">Free Fire</a>
+      <a href="pubg.html">PUBG Mobile</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Toko Top Up Game</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Up Mobile Legends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Top Up Mobile Legends</h1>
+  <form id="topupForm">
+    <label>ID + Server (Contoh: 12345678(1234))</label>
+    <input type="text" id="id" required>
+
+    <label>Pilih Nominal</label>
+    <select id="nominal">
+      <option value="86 Diamonds - Rp20.000">86 Diamonds - Rp20.000</option>
+      <option value="172 Diamonds - Rp40.000">172 Diamonds - Rp40.000</option>
+    </select>
+
+    <label>Pilih Pembayaran</label>
+    <select id="payment">
+      <option value="Dana">Dana</option>
+      <option value="OVO">OVO</option>
+      <option value="Bank Transfer">Bank Transfer</option>
+    </select>
+
+    <button type="submit">Kirim ke WhatsApp</button>
+  </form>
+
+  <script>
+    document.getElementById("topupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const id = document.getElementById("id").value;
+      const nominal = document.getElementById("nominal").value;
+      const payment = document.getElementById("payment").value;
+      const waNumber = "6281234567890"; // Ganti dengan nomor WA admin
+
+      const message = `Halo Admin, saya ingin top up Mobile Legends.%0AID: ${id}%0ANominal: ${nominal}%0APembayaran: ${payment}`;
+      window.open(`https://wa.me/${waNumber}?text=${message}`, "_blank");
+    });
+  </script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.game-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.game-list a {
+  padding: 15px 25px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
